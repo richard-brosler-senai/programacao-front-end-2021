@@ -4,14 +4,17 @@ p, h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold
 }
+
 header img, footer img {
   margin: 10px;
   width: 10vw;
 }
+
 header nav {
   float: right;
   margin-top: 40px;
 }
+
 footer {
   display: grid;
   grid-template-columns: auto auto 190px;
@@ -65,4 +68,24 @@ footer {
 .midias-sociais img{
   width: 40px;
   padding: 5px;
+}
+.pesquisa {
+  display: inline-block;
+}
+.pesquisa span {
+  float: left;
+  background-color: silver;
+  width: 40px;
+  height: 40px;
+  border-radius: 0px 5px 5px 0px;
+  text-align: center;
+  padding-top: 5px;
+}
+.pesquisa input {
+  float: left;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid silver;
+  height: 40px;
+  width: 400px;
+  text-align: right;
 }
