@@ -1,0 +1,213 @@
+/* Mundando a fonte de todos os itens do html */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Iniciando o estilo do header do documento */
+/* Conceito de Mobile first */
+/* Menu mobile */
+#mobile-menu {
+  margin-top: 15px;
+  float: right;
+}
+#mobile-menu img {
+  width: 50px;
+}
+/* Ajustando o menu */
+header nav {
+  /*float: right;*/
+  display: none;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 15px;
+}
+header nav ul li {
+  font-weight: bold;
+}
+#banner, #novidade {
+  background-color: #3CD1DB;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+#banner img, #novidade img {
+  width: 90vw;
+}
+
+#banner div, #novidade div {
+  margin-top: 10px;
+  width: 90vw;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(60, 209, 219, 0.3);
+  display: grid;
+  grid-template-areas: 
+    'enderecos1 enderecos3'
+    'enderecos2 midias-sociais';
+  padding: 10px;
+}
+#logotipo-rodape {
+  display: none;
+  grid-area: imagem-logo;
+}
+.enderecos-rodape1 {
+  grid-area: enderecos1;
+  font-size: small;
+}
+.enderecos-rodape2 {
+  grid-area: enderecos2;
+  font-size: small;
+}
+.enderecos-rodape3 {
+  grid-area: enderecos3;
+  font-size: small;
+}
+
+#midias-sociais {
+  grid-area: midias-sociais;
+}
+#midias-sociais img{
+  height: 40px;
+}
+#menu-rodape {
+  display: none;
+  grid-area: menu-rodape;
+}
+#menu-rodape ul {
+  list-style: none;
+}
+#menu-rodape ul li {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width:720px) {
+  #mobile-menu {
+    display: none;
+  }
+  header nav {
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  /* Itens do Banner e destaque */
+  #banner, #novidade {
+    padding: 50px;
+    column-gap: 50px;
+    margin-top: 20px;
+  }
+  #banner img, #novidade img {
+    width: 450px;
+  }
+  #banner div, #novidade div {
+    margin-top: 20px;
+    width: 600px;
+  }
+
+  footer {
+    grid-template-areas: 
+      'imagem-logo enderecos1 midias-sociais'
+      'imagem-logo enderecos2 menu-rodape'
+      'imagem-logo enderecos3 menu-rodape';
+    padding: 20px;
+  }  
+
+  #logotipo-rodape {
+    display: block;
+  }
+  #menu-rodape {
+    display: block;
+  }
+}
+
+/* Itens do destaque */
+
+#galeria {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* Minhas classes CSS */
+.texto-centralizado {
+  text-align: center;
+}
+/* Grupo de cards*/
+.grupo-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+/* Classe card */
+.senai-card {
+  width: 250px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.senai-card img {
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+}
+.senai-card div {
+  padding: 10px;
+}
+.img-logo {
+  width: 100px;
+  margin: 10px;
+}
+
+/* Ajustes no bootstrap */
+/* Ajustando o tamanho do slide para ficar com 80% da altura da tela */
+.carousel-item {
+  height: 80vh;
+}
+/* Ajustando a altura da imagem para não cortar a imagem mas expandir
+para caber no tamanho do slide */
+.carousel-item img {
+  height: 100%;
+}
+/* Mundando o fundo dos títulos dos slides para fundo tranparente
+cinza */
+.carousel-caption {
+  background-color: rgba(192, 192, 192, 0.65);
+  border-radius: 20px;
+}
+/* Deixando os indicadores dos slides arredondados */
+.carousel-indicators [data-bs-target]{
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+/* Trocando o ícone indicador de próximo do carrosel */
+.carousel-control-next-icon{
+  background-image: url("../imagens/maior.svg");
+}
+/* Trocando o ícone do indicador de anterior do carrosel */
+.carousel-control-prev-icon{
+  background-image: url("../imagens/menor.svg");
+}
+/* Ajustando o fundo dos ícones de anterior e próximo para ficar
+arredondado, centralizado na altura dos slides e fundo transparente
+branco */
+.carousel-control-next, .carousel-control-prev {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  top: 50%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
