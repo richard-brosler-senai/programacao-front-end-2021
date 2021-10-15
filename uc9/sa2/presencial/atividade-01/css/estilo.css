@@ -21,7 +21,6 @@ footer {
 }
 /* Seção de IDS */
 #nav-desktop {
-  /*float: right;*/
   display: none;
 }
 #nav-desktop ul {
@@ -93,17 +92,7 @@ footer {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#mobile-menu-itens {
-  width: 150px;
-  border: 1px solid silver;
-  border-radius: 5px;
-  padding-right: 15px;
-}
-
 /* Seção das Classes */
-.div-hidden {
-  display: none;
-}
 .enderecos-rodape1 {
   grid-area: enderecos1;
   font-size: small;
@@ -194,9 +183,6 @@ branco */
 /*#endregion*/
 /*#region Ajustes de layout - Responsividade */
 @media screen and (min-width:720px) {
-  header nav {
-    display: block;
-  }
   footer {
     grid-template-areas: 
       'imagem-logo enderecos1 midias-sociais'
@@ -204,10 +190,13 @@ branco */
       'imagem-logo enderecos3 menu-rodape';
     padding: 20px;
   }  
+
+  #nav-desktop {
+    display: block;
+  }
   #mobile-menu {
     display: none;
   }
-  /* Itens do Banner e destaque */
   #banner, #novidade {
     padding: 2vw;
     column-gap: 50px;
@@ -226,6 +215,7 @@ branco */
   #menu-rodape {
     display: block;
   }
+
   .carousel-item {
     height: 50vw;
   }  
