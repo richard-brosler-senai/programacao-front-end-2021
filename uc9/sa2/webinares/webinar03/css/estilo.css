@@ -94,6 +94,8 @@ footer {
   margin-bottom: 10px;
 }
 #mobile-menu-itens {
+  margin-top: 10px;
+  margin-left: calc( 95vw - 150px);
   width: 150px;
   border: 1px solid silver;
   border-radius: 5px;
@@ -101,9 +103,6 @@ footer {
 }
 
 /* Seção das Classes */
-.div-hidden {
-  display: none;
-}
 .enderecos-rodape1 {
   grid-area: enderecos1;
   font-size: small;
@@ -194,9 +193,6 @@ branco */
 /*#endregion*/
 /*#region Ajustes de layout - Responsividade */
 @media screen and (min-width:720px) {
-  header nav {
-    display: block;
-  }
   footer {
     grid-template-areas: 
       'imagem-logo enderecos1 midias-sociais'
@@ -204,6 +200,9 @@ branco */
       'imagem-logo enderecos3 menu-rodape';
     padding: 20px;
   }  
+  #nav-desktop {
+    display: block;
+  }
   #mobile-menu {
     display: none;
   }
