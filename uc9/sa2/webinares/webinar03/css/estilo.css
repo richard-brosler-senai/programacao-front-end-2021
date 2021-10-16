@@ -225,9 +225,6 @@ branco */
 }
 
 @media screen and (min-width:920px) {
-  #banner, #novidade {
-    padding: 2vw;
-  }  
   .carousel-item {
     height: 40vw;
   }  
