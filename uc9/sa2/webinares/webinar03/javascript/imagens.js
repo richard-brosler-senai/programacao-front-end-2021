@@ -67,11 +67,12 @@ for (var i=0;i<elementos.length;i++)
   //Adicionamos o valor sorteado para a lista de valores sorteados
   itensSorteados.push(indiceAleatorio)
   //jogamos na console o valor original do caminho da imagem
-  console.log(item.children[0].src)
+  console.log(item.querySelector("img").src)
   //trocaremos o caminho para o caminho do item sorteado
-  item.children[0].src="imagens/jogos/"+imgsLst[indiceAleatorio]
+  item.querySelector("img").src="imagens/jogos/"+imgsLst[indiceAleatorio]
   //trocamos o conteúdo do h5 que está no div
-  item.children[1].children[0].innerText=imgTitulo[indiceAleatorio]
+  var divItem=item.querySelector("div")
+  divItem.querySelector("h5").innerText=imgTitulo[indiceAleatorio]
   //trocamos o conteúdo do p que está no div
-  item.children[1].children[1].innerText=imgDesc[indiceAleatorio]
+  divItem.querySelector("p").innerText=imgDesc[indiceAleatorio]
 }
