@@ -50,7 +50,7 @@ var imgTitulo=
   "Transistor"
 ]
 //Selecionando todos os elementos que usam a classe carousel-item            
-var elementos=document.getElementsByClassName("carousel-item")
+var elementos=document.querySelectorAll(".carousel-item")
 var itensSorteados=[]
 //Percorrendo todos os elementos selecionados
 for (var i=0;i<elementos.length;i++)
