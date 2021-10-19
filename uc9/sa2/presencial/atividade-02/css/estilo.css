@@ -1,0 +1,98 @@
+/* Aplicando a fonte para todos os itens */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Ajustes pelas tags HTML */
+header {
+  margin: 10px;
+  /* O ajuste do tamanho do header foi só para tirar a 
+    barra de rolagem inferior */  
+  width: 98.4%;
+}
+
+footer {
+  background-color: rgba(60, 209, 219, 0.3);
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Ajustes pelos Ids do HTML */
+#nav-desktop {
+  margin-top: 30px;
+  float: right;
+}
+#nav-desktop ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#nav-desktop ul li {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+#menu-rodape ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+#banner, #novidade {
+  background-color: #3CD1DB;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  margin: 10px;
+
+}
+#banner img, #novidade img {
+  width: 400px;
+  height: 100%;
+}
+#banner div, #novidade div {
+  margin-top: 20px;
+  width: 500px;
+}
+#midias-sociais img {
+  height: 40px;
+}
+
+#galeria {
+  margin: 10px;
+}
+
+/* Ajustes pelas classes criadas no CSS */
+/* Minhas classes CSS */
+.img-logo {
+  width: 100px;
+}
+
+.texto-centralizado {
+  text-align: center;
+}
+
+.grupo-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  justify-content: center;
+}
+
+.senai-card {
+  width: 250px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.senai-card img {
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+}
+.senai-card div {
+  padding: 10px;
+}
