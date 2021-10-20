@@ -4,32 +4,134 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste Slides</title>
-  <link rel="stylesheet" href="css/estilo.css">
+  <title>Eventos HTML</title>
 </head>
 <body>
-  <div class="slide-in from-left">
-    <div class="slide-in-content">
-      <ul>
-        <li>Lorem</li>
-        <li>Ipsum</li>
-        <li>Dolor</li>
-      </ul>
+  <style>
+    section div:not(.clicavel) { 
+      margin: 10px;
+      background-color: aquamarine;
+      padding: 10px;
+    }
+  </style>
+  <header>
+    <h1>Vamos demonstrar alguns eventos mais comuns no HTML</h1>
+    <p>Para conhecer um pouco mais sobre os eventos, recomendo a leitura do artigo
+      sobre eventos no MDN - Mozzila disponível em: 
+      <a href="https://developer.mozilla.org/pt-BR/docs/Web/Events" target="_blank">
+        https://developer.mozilla.org/pt-BR/docs/Web/Events</a>.
+    </p>
+    <p>Outro material muito bom é do W3cSchool, disponível em:
+      <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">
+        https://www.w3schools.com/jsref/dom_obj_event.asp</a>.
+    </p>
+  </header>
+  <section id="eventos-comuns">
+    <p>Vamos aos eventos mais comuns utilizados em uma aplicação:</p>
+    <ul>
+      <li><a href="#click-eventos">Evento Click</a></li>
+      <li><a href="#evento-focus">Evento onFocus</a></li>
+      <li><a href="#evento-focusin">Evento onFocusin</a></li>
+      <li><a href="#">Evento onBlur</a></li>
+      <li><a href="#">Evento onFocusOut</a></li>
+      <li><a href="#">Evento onLoad</a></li>
+      <li><a href="#">Evento onUnLoad</a></li>
+    </ul>
+  </section>
+  <section id="click-eventos">
+    <h1>Evento Click</h1>
+    <div>
+      <span>Botão sendo clicável --></span>
+      <button class="clicavel">Clique-me</button>
     </div>
-  </div>
-  
-  <div class="slide-in from-right">
-    <div class="slide-in-content">
-      <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-      </ul>
+    <div>
+      <span>Imagem sendo clicável --></span>
+      <img class="clicavel" src="imagens/click-here-button-png-22346.png" 
+      alt="imagen click-me" style="width: 150px;">
     </div>
-  </div>
-  
-  <button id="toggle" style="position:absolute; top: 120px;">Toggle</button>  
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="javascript/meuJS.js"></script>
+    <div>
+      <span>Texto sendo clicável --></span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Atque consectetur, quas numquam hic ad corporis deleniti 
+        minima accusamus consequuntur vitae veniam, sint, 
+        in excepturi voluptatibus nobis! 
+        <b><span class="clicavel">Clique-me</span></b>
+        Excepturi commodi quibusdam harum!</p>
+    </div>
+    <div>
+      <h4>Cuidado com o Bubbling</h4>
+      <p>Nesse exemplo iremos colocar o click no Div e dentro dele um click também.</p>
+      <div class="clicavel">
+        <button class="clicavel">Clique-me</button>
+      </div>
+    </div>
+  </section>
+  <section id="evento-focus">
+    <h1>Evento Focus</h1>
+    <div>
+      <span>Elemento recebendo o focus.</span>
+      <input type="text" class="focavel">
+    </div>
+    <div>
+      <span>Botão sendo clicável --></span>
+      <button class="focavel">Clique-me</button>
+    </div>
+    <div>
+      <span>Imagem sendo clicável --></span>
+      <img class="focavel" src="imagens/click-here-button-png-22346.png" 
+      alt="imagen click-me" style="width: 150px;" tabIndex="1">
+    </div>
+    <div>
+      <span>Texto sendo clicável --></span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Atque consectetur, quas numquam hic ad corporis deleniti 
+        minima accusamus consequuntur vitae veniam, sint, 
+        in excepturi voluptatibus nobis! 
+        <b><span class="focavel" tabindex="3">Clique-me</span></b>
+        Excepturi commodi quibusdam harum!</p>
+    </div>
+    <div>
+      <h4>Aqui não ocorre Bubbling</h4>
+      <p>Nesse exemplo iremos colocar o click no Div e dentro dele um click também.</p>
+      <div class="focavel" tabindex="2">
+        <button class="focavel">Clique-me</button>
+      </div>
+    </div>    
+  </section>
+
+  <section id="evento-focusin">
+    <h1>Evento FocusIn</h1>
+    <div>
+      <span>Elemento recebendo o focus.</span>
+      <input type="text" class="focavelin">
+    </div>
+    <div>
+      <span>Botão sendo clicável --></span>
+      <button class="focavelin">Clique-me</button>
+    </div>
+    <div>
+      <span>Imagem sendo clicável --></span>
+      <img class="focavelin" src="imagens/click-here-button-png-22346.png" 
+      alt="imagen click-me" style="width: 150px;" tabIndex="1">
+    </div>
+    <div>
+      <span>Texto sendo clicável --></span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Atque consectetur, quas numquam hic ad corporis deleniti 
+        minima accusamus consequuntur vitae veniam, sint, 
+        in excepturi voluptatibus nobis! 
+        <b><span class="focavelin" tabindex="3">Clique-me</span></b>
+        Excepturi commodi quibusdam harum!</p>
+    </div>
+    <div>
+      <h4>Aqui ocorre Bubbling</h4>
+      <p>Nesse exemplo iremos colocar o click no Div e dentro dele um click também.</p>
+      <div class="focavelin" tabindex="2">
+        <button class="focavelin">Clique-me</button>
+      </div>
+    </div>    
+  </section>
+
+  <script src="javascript/exemplos.js"></script>
 </body>
 </html>
