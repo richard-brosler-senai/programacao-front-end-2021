@@ -2,7 +2,7 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+/* Mobile First */
 /* Ajustes pelas tags HTML */
 header {
   margin: 10px;
@@ -10,18 +10,45 @@ header {
     barra de rolagem inferior */  
   width: 98%;
 }
-
 footer {
   background-color: rgba(60, 209, 219, 0.3);
   margin: 10px;
   padding: 10px;
+  display: grid;
+  grid-template-areas: 
+    "enderecos telefones"
+    "emails midias-sociais";
 }
-
-/* Ajustes pelos Ids do HTML */
+#banner, #novidade {
+  background-color: #3CD1DB;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 25px;
+  margin: 10px;
+}
+#banner img, #novidade img {
+  width: 100%;
+  height: 100%;
+}
+#banner div, #novidade div {
+  margin-top: 20px;
+  width: 100%;
+}
 #nav-desktop {
-  margin-top: 30px;
-  float: right;
+  display: none;
 }
+#menu-mobile {
+  display: block;
+  float: right;
+  margin-top: 20px;
+}
+#img-rodape, #menu-rodape {
+  display: none;
+}
+/* Ajustes pelos Ids do HTML */
 #nav-desktop ul {
   list-style: none;
   display: flex;
@@ -32,49 +59,36 @@ footer {
   margin-right: 10px;
   font-weight: bold;
 }
-
 #menu-rodape ul {
   list-style: none;
   padding-inline-start: 0px;
 }
-
-#banner, #novidade {
-  background-color: #3CD1DB;
-  padding: 20px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  column-gap: 50px;
-  margin: 10px;
-
-}
-#banner img, #novidade img {
-  width: 400px;
-  height: 100%;
-}
-#banner div, #novidade div {
-  margin-top: 20px;
-  width: 500px;
-}
 #midias-sociais img {
   height: 40px;
 }
-
 #galeria {
   margin: 10px;
 }
-
+.enderecos {
+  grid-area: enderecos;
+}
+.emails {
+  grid-area: emails;
+}
+.telefones {
+  grid-area: telefones;
+}
+.midias-sociais {
+  grid-area: midias-sociais;
+}
 /* Ajustes pelas classes criadas no CSS */
 /* Minhas classes CSS */
 .img-logo {
   width: 100px;
 }
-
 .texto-centralizado {
   text-align: center;
 }
-
 .grupo-cards {
   display: flex;
   flex-direction: row;
@@ -82,7 +96,6 @@ footer {
   column-gap: 10px;
   justify-content: center;
 }
-
 .senai-card {
   width: 250px;
   border: 1px solid silver;
@@ -95,4 +108,61 @@ footer {
 }
 .senai-card div {
   padding: 10px;
+}
+/* Ajustes do bootstrap */
+.carousel-caption {
+  background-color: rgba(211, 211, 211, 0.7);
+  border-radius: 10px;
+}
+.carousel-indicators [data-bs-target] {
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+}
+.carousel-item {
+  height: 40vw;
+}
+.carousel-item img {
+  height: 100%;
+}
+
+/* Ajuste para responsividade */
+@media screen and (min-width: 720px) {
+  footer {
+    grid-template-areas: 
+      "logotipo emails midias-sociais"
+      "logotipo enderecos menu-rodape"
+      "logotipo telefones menu-rodape";
+  }
+  #img-rodape, #menu-rodape {
+    display: block;
+  }
+  #img-rodape {
+    grid-area: logotipo;
+  }
+  #menu-rodape {
+    grid-area: menu-rodape;
+  }
+  #banner, #novidade {
+    padding: 20px;
+    column-gap: 50px;
+  }
+  #banner img, #novidade img {
+    width: 30vw;
+    height: 100%;
+  }
+  #banner div, #novidade div {
+    margin-top: 20px;
+    width: 50vw;
+  }
+   #nav-desktop {
+    display: block;
+    margin-top: 30px;
+    float: right;
+  }
+  #menu-mobile {
+    display: none;
+  }  
+
 }
