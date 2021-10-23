@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos de eventos no HTML - Javascript</title>
+  <link rel="stylesheet" href="css/eventos.css">
+</head>
+<body onload="bodyLoad()">
+  <header>
+    <span id="temporizado"></span>
+    <h1>Vamos demonstrar alguns eventos mais comuns no HTML</h1>
+    <p>Para conhecer um pouco mais sobre os eventos, recomendo a leitura do artigo
+      sobre eventos no MDN - Mozzila disponível em: 
+      <a href="https://developer.mozilla.org/pt-BR/docs/Web/Events" target="_blank">
+        https://developer.mozilla.org/pt-BR/docs/Web/Events</a>.
+    </p>
+    <p>Outro material muito bom é do W3cSchool, disponível em:
+      <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">
+        https://www.w3schools.com/jsref/dom_obj_event.asp</a>.
+    </p>
+  </header>
+  <section id="eventos-comuns">
+    <p>Vamos aos eventos mais comuns utilizados em uma aplicação:</p>
+    <ul>
+      <li><a href="#evento-click">Evento Click</a></li>
+      <li><a href="#evento-focus">Evento Focus e Blur</a></li>
+      <li><a href="#evento-focusin">Evento Focusin e FocusOut</a></li>
+    </ul>
+  </section>
+  <!-- Seção de evento de click -->
+  <section id="evento-click">
+    <h1>Eventos do Click</h1>
+    <!-- Usando no Button -->
+    <div class="div-evento">
+      <h3>Usando o click no botão.</h3>
+      <p>Quando o botão for clicado, disparará um evento onde irá mostrar a mensagem</p>
+      <button class="clicavel">Click-me</button>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no img -->
+    <div class="div-evento">
+      <h3>Usando o click no img.</h3>
+      <p>Quando o img for clicado, disparará um evento onde irá mostrar a mensagem</p>
+      <img src="imagens/click-here-button-png-22346.png" alt="" class="clicavel" style="width: 200px;">
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no texto -->
+    <div class="div-evento">
+      <h3>Usando o click no texto.</h3>
+      <p>Quando o texto for clicado, disparará um evento onde irá mostrar a mensagem</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nisi iure
+         impedit quia doloremque, quo illum ad repudiandae fugiat cum harum
+         <b><span class="clicavel">--> Clique Aqui <-- </span></b>
+         necessitatibus voluptates sed nostrum velit reprehenderit. 
+         Reprehenderit, non velit?</p>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no Button com Bubbling -->
+    <div class="div-evento">
+      <h3>Usando o click no botão com Bubbling.</h3>
+      <p>Quando o botão for clicado, disparará um evento onde irá mostrar a mensagem, porém
+        nesse caso teremos o que chamamos de bubbling por que o elemento pai vai ter também
+        o evento click</p>
+      <div class="clicavel">
+        <h4>Nesse div tem click event</h4>
+        <button class="clicavel">Click-me</button>
+      </div>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+  </section>
+  <!-- Seção de evento de focus e blur -->
+  <section id="evento-focus">
+    <h1>Eventos do Focus e Blur</h1>
+    <!-- Usando no Button -->
+    <div class="div-evento">
+      <h3>Usando o focus e blur no botão.</h3>
+      <p>Quando o botão receber ou perder o foco, disparará um evento onde irá mostrar 
+         mudar a cor do elemento.</p>
+      <button class="focavel">Click-me</button>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no img -->
+    <div class="div-evento">
+      <h3>Usando o focus e blur no img.</h3>
+      <p>Quando o img receber ou perder o foco, disparará um evento onde irá 
+        mudar a cor do elemento.</p>
+      <img src="imagens/click-here-button-png-22346.png" alt="" tabindex="0"
+      class="focavel" style="width: 200px;">
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no texto -->
+    <div class="div-evento">
+      <h3>Usando o focus e blur no texto.</h3>
+      <p>Quando o texto receber o foco ou perder o foco, disparará um evento onde irá mudar a cor do elemento.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nisi iure
+         impedit quia doloremque, quo illum ad repudiandae fugiat cum harum
+         <b><span class="focavel" tabindex="1">--> Clique Aqui <-- </span></b>
+         necessitatibus voluptates sed nostrum velit reprehenderit. 
+         Reprehenderit, non velit?</p>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no Button com Bubbling -->
+    <div class="div-evento">
+      <h3>Usando o focus e blur no Butto e no Div.</h3>
+      <p>Quando o botão ou o div receber o foco irá mudar a cor ou ao perder o foco, porém
+        nesse caso não teremos o que chamamos de bubbling.</p>
+      <div class="focavel" tabindex="2">
+        <h4>Nesse div tem click event</h4>
+        <button class="focavel">Click-me</button>
+      </div>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+  </section>
+  <!-- Seção de evento de focusin e focusout -->
+  <section id="evento-focusin">
+    <h1>Eventos do Focusin e FocusOut</h1>
+    <!-- Usando no Button -->
+    <div class="div-evento">
+      <h3>Usando o Focusin e FocusOut no botão.</h3>
+      <p>Quando o botão receber ou perder o foco, disparará um evento onde irá mostrar 
+         mudar a cor do elemento.</p>
+      <button class="focavelin">Click-me</button>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no img -->
+    <div class="div-evento">
+      <h3>Usando o Focusin e FocusOut no img.</h3>
+      <p>Quando o img receber ou perder o foco, disparará um evento onde irá 
+        mudar a cor do elemento.</p>
+      <img src="imagens/click-here-button-png-22346.png" alt="" tabindex="0"
+      class="focavelin" style="width: 200px;">
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no texto -->
+    <div class="div-evento">
+      <h3>Usando o Focusin e FocusOut no texto.</h3>
+      <p>Quando o texto receber o foco ou perder o foco, disparará um evento onde irá mudar a cor do elemento.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nisi iure
+         impedit quia doloremque, quo illum ad repudiandae fugiat cum harum
+         <b><span class="focavelin" tabindex="1">--> Clique Aqui <-- </span></b>
+         necessitatibus voluptates sed nostrum velit reprehenderit. 
+         Reprehenderit, non velit?</p>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+    <!-- Usando no Button com Bubbling -->
+    <div class="div-evento">
+      <h3>Usando o Focusin e FocusOut no Button e no Div.</h3>
+      <p>Quando o botão ou o div receber o foco irá mudar a cor ou ao perder o foco, porém
+        nesse caso teremos o que chamamos de bubbling.</p>
+      <div class="focavelin" tabindex="2">
+        <h4>Nesse div tem click event</h4>
+        <button class="focavelin">Click-me</button>
+      </div>
+      <div class="link-topo">
+        <a href="#">Topo</a>      
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <div>
+      <h4 id="msg-footer"></h4>
+    </div>
+  </footer>
+  <script src="javascript/eventos.js"></script>
+</body>
+</html>

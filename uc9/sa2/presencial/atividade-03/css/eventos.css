@@ -1,0 +1,17 @@
+.div-evento {
+  background-color: azure;
+  margin: 20px;
+  padding: 20px;
+}
+
+.link-topo {
+  text-align: right;
+}
+
+.clicavel:hover {
+  cursor: pointer;
+}
+
+.cor-fundo-crimson {
+  background-color: crimson;
+}
