@@ -1,0 +1,62 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Página de contato</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <!--Nome-->
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput ngModel name="nome" type="text">
+      </mat-form-field>
+    </div>
+    <!--Endereço-->
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Endereço</mat-label>
+        <input matInput ngModel name="endereco" type="text">
+      </mat-form-field>
+    </div>
+    <!--Telefone-->
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput ngModel name="telefone" type="text">
+      </mat-form-field>
+    </div>
+    <!--E-mail-->
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input matInput ngModel name="email" type="email">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo de Contato</mat-label>
+        <mat-select [(ngModel)]="opContatoSel" name="opContato">
+          <mat-option value="0">Selecione uma opção</mat-option>
+          <mat-option value="1">Contato Comercial</mat-option>
+          <mat-option value="2">Contato Pessoal</mat-option>
+          <mat-option value="3">Outros</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Mensagem</mat-label>
+        <textarea matInput ngModel name="mensagem"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" type="submit">Enviar</button>
+    </div>
+  </form>
+  <br>
+  <div>
+    <button mat-raised-button color="primary" (click)="Mensagem()">Mensagem</button><br>
+    <span id="mensagem-botao">Sem Mensagem definida</span>
+  </div>
+  </mat-card-content>
+</mat-card>
