@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SideNavService } from './side-nav.service';
+import { SidenavService } from './sidenav.service';
 
-describe('SideNavService', () => {
-  let service: SideNavService;
+describe('SidenavService', () => {
+  let service: SidenavService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SideNavService);
+    service = TestBed.inject(SidenavService);
   });
 
   it('should be created', () => {

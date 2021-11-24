@@ -1,18 +1,8 @@
-.mat-card {
-  width: 80vw;
-  margin: 5px auto;
+#form-contato {
+  width: 350px;
   text-align: center;
-}
-.mat-card-title {
-  flex: 1;
-  text-align: center;
+  margin: 20px auto;
 }
 .mat-form-field {
-  width: 98%;
-}
-
-@media screen and (min-width: 768px) {
-  .mat-card {
-    width: 500px;
-  }
+  width: 99%;
 }

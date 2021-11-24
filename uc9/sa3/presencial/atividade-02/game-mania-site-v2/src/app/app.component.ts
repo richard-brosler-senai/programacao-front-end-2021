@@ -1,20 +1,23 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { SideNavService } from './_services/side-nav.service';
+import { SidenavService } from './_services/sidenav.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
-  
-  @ViewChild('snav') public snav!: MatSidenav;
 
+export class AppComponent 
+  implements AfterViewInit {
   title = 'game-mania-site-v2';
-  constructor( private sidenavService: SideNavService ) { }
+  @ViewChild('sidenav') public sidenav!: MatSidenav;
 
-  ngAfterViewInit(): void {
-    this.sidenavService.setSidenav(this.snav)
+  constructor(
+    private sidenavService: SidenavService){
+  }
+
+  ngAfterViewInit(){
+    this.sidenavService.setSidenav(this.sidenav);
   }
 }
