@@ -1,0 +1,13 @@
+.card-login{
+  width: 300px;
+  margin: 50px auto;
+}
+.mat-form-field{
+  width: 98%;
+}
+.rodape-login{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
