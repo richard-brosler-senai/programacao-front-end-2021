@@ -15,7 +15,7 @@ export class CadastroService {
   showMessege(msg: string, isError : boolean = false): void {
     this.snackBar.open(msg,'X',{
       duration: 6000,
-      verticalPosition: "bottom",
+      verticalPosition: "top",
       panelClass: isError ? ["errorMsg"] : ["sucessMsg"]
     });
   }

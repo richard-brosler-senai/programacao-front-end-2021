@@ -7,7 +7,16 @@
       "id": 1
     }
   ],
-  "cadastro": [],
+  "cadastro": [
+    {
+      "email": "email@email.com.br",
+      "cpf": "123.456.789-00",
+      "nome": "Nome e Sobrenome",
+      "dataNasc": "2010-01-01",
+      "telefone": "(14) 2222-2222",
+      "id": 1
+    }
+  ],
   "compra": [],
   "evento": []
 }
