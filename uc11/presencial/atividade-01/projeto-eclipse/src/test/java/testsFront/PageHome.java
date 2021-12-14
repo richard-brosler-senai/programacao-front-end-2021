@@ -1,13 +1,14 @@
 package testsFront;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PageHome {
@@ -19,31 +20,37 @@ public class PageHome {
 				System.getenv("Driver"));
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		driver.get("https://www.google.com");
+		driver.get("https://online.sp.senai.br");
+		driver.manage().window().maximize();
 	}
 	
 	@Test
 	public void testNavegarPaginaHome() {
+		driver.findElement(By.xpath("//*[@id=\"nav\"]/li[3]/a/span")).click();
+		driver.findElement(By.id("MenuLateral_rptMenuEscola_rptSubMenu_1_lnkSubMenu_1")).click();
 		
-		driver.findElement(By.className("gLFyf")).sendKeys("senai");
-		driver.findElement(By.className("gLFyf")).sendKeys(Keys.ENTER);
-		driver.findElement(By.className("LC20lb")).click();
-		driver.findElement(By.id("idControle_0")).click();
-		driver.findElement(By.id("ctl00_Header1_MenuSuperior1_rptMenuLateral_ctl00_rptMenu_ctl05_lnkMenu")).click();
-		//driver.findElement(By.id("oqEstabuscando")).click();
-		driver.findElement(By.id("oqEstabuscando")).sendKeys("Técnico");
-		driver.findElement(By.id("oqEstabuscando")).sendKeys(Keys.ENTER);
-		//driver.findElement(By.className("btnBuscaJavascript")).click();
-		driver.findElement(By.xpath("//*[@id=\"ctl00_cp_lv_ctrl1_lnkTitu\"]/span")).click();
-		try {
-			Thread.sleep(2000);
-		} catch(InterruptedException e) {
-			e.printStackTrace();
-		}
+		//opcEletricistaIndustrial();
+		opcProgramadorFrontEnd();
+		
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.findElement(By.className("btn-danger")).click();
+		driver.findElement(By.id("MainContent_ExRdbLGPD")).click();
+		driver.switchTo().frame(0);
+		driver.findElement(By.className("recaptcha-checkbox-border")).click();
+		driver.switchTo().defaultContent();
+		driver.findElement(By.id("ButtonVotar")).click();
 	}
 	
+	public void opcProgramadorFrontEnd() {
+		driver.findElement(By.id("ctl00_cp_rptSegmArea_ctl00_rptCursos_ctl16_rptRegi_ctl03_rptEsco_ctl00_lnkEscolaBtn")).click();
+	}
+	
+	public void opcEletricistaIndustrial() {
+		driver.findElement(By.id("ctl00_cp_rptSegmArea_ctl00_rptCursos_ctl09_rptRegi_ctl01_rptEsco_ctl01_lnkEscola")).click();
+	}
 	@After
 	public void finalizandoTestes() {
-		driver.close();
+		//driver.close();
 	}
 }
